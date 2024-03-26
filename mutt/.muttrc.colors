@@ -1,0 +1,73 @@
+# default rule to indicate:
+  color index red          white   .
+
+# The GOOD:
+  color index white        blue    "~h 'User-Agent: .*Mutt'"
+  color index white        blue    "~h 'User-Agent: .*gnus'"
+  color index white        blue    "~h 'User-Agent: .*Gnus'"
+  color index white        blue    "~h 'User-Agent: .*tin'"
+  color index white        blue    "~h 'X-Mailer: .*ELM'"
+  color index white        blue    "~h 'X-Mailer: .*Mutt'"
+  color index white        blue    "~h 'X-Mailer: .*Emacs'"
+  color index white        blue    "~h 'X-Newsreader: .*Emacs'"
+
+# The BAD:
+  color index white        red     "~i pine"
+  color index white        red     "~i Pine"
+  color index white        red     "~h 'X-Lotus-FromDomain: '"
+  color index white        red     "~h 'X-Mailer: .*CrossPoint'"
+  color index white        red     "~h 'X-Mailer: .*dtmail'"
+  color index white        red     "~h 'X-Mailer: .*Eudora'"
+  color index white        red     "~h 'X-Mailer: Internet Mail Service'"
+  color index white        red     "~h 'X-Mailer: Microsoft Internet Mail'"
+  color index white        red     "~h 'X-Mailer: Microsoft Outlook'"
+  color index white        red     "~h 'X-Mailer: Mozilla'"
+  color index white        red     "~h 'X-Mailer: Novell GroupWise'"
+  color index white        red     "~h 'X-mailer: .*Pegasus'"
+  color index white        red     "~h 'X-Mailer: .*PostMe'"
+
+  color index white        red     "~h 'X-Mailer: .*AOL'"
+  color index white        red     "~h 'X-Mailer: T-Online eMail'"
+
+  color index white        red     "~h 'X400-'"
+
+# And the UGLY:  (web based clients)
+  color index white        magenta "~i hotmail.com'"
+  color index white        magenta "~i mail.yahoo.com'"
+  color index white        magenta "~i yahoomail.com'"
+  color index white        magenta "~i @belug.in-berlin.de'"
+  color index white        magenta "~h 'Organization: http://freemail.web.de/'"
+  color index white        magenta "~h 'User-Agent: IMP/PHP'"
+  color index white        magenta "~h 'X-Mailer: WWW-Mail'"
+  color index white        magenta "~h 'X-Mailer: USANET web-mailer'"
+
+# Undecided yet:
+  color index white        green   "~h 'MIME-Version: .*NeXT Mail'"
+  color index white        green   "~h 'X-Mailer: .*AK-Mail'"
+  color index white        green   "~h 'X-Mailer: .*AtDot'"
+  color index white        green   "~h 'X-Mailer: .*BeOS Mail'"
+  color index white        green   "~h 'X-Mailer: .*Calypso'"
+  color index white        green   "~h 'X-Mailer: .*cppnews'"
+  color index white        green   "~h 'X-Mailer: .*KMail'"
+  color index white        green   "~h 'X-Mailer: .*MIME::Lite'"
+  color index white        green   "~h 'X-Mailer: .*nettool/newmail'"
+  color index white        green   "~h 'X-Mailer: .*InterChange'"
+  color index white        green   "~h 'X-Mailer: .*Postmaster'"
+  color index white        green   "~h 'X-Mailer: .*Steyla UMAIL'"
+  color index white        green   "~h 'X-Mailer: .*XCmail'"
+  color index white        green   "~h 'X-Mailer: .*XFMail'"
+  color index white        green   "~h 'X-Mailer: .*Z-Mail'"
+  color index white        green   "~h 'X-MailConverter: .*SoupGate'"
+
+# References coloring - "the more references - the darker the color":
+  color index brightyellow black   "~h 'In-Reply-To: '"
+  color index brightyellow black   "~h 'In-Reply-To: Your message of'"
+  color index brightyellow black   "~h 'In-reply-to: Your message of'"
+  color index brightyellow black   "~h 'In-reply-to: Message from'"
+  color index brightyellow black   "~h 'References:( +<.+>){1}'"
+  color index brightred    black   "~h 'References:( +<.+>){2}'"
+  color index red          black   "~h 'References:( +<.+>){3}'"
+  color index magenta      black   "~h 'References:( +<.+>){4}'"
+  color index blue         black   "~h 'References:( +<.+>){5}'"
+  color index green        black   "~h 'References:( +<.+>){6}'"
+

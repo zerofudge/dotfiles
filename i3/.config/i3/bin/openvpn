@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [[ "$1" = "up" ]]; then
+	declare -a conz
+
+	for i in $(nmcli -t c |grep ':vpn:'|cut -d':' -f2 | tr '\n' ' '); do
+		conz+=($i)
+	done
+
+	RND=$$$(date +%s)
+
+	con=${conz[$RANDOM % ${#conz[@]} ]}
+
+	nmcli -t c up $con passwd-file ${HOME}/.passwd
+else
+	nmcli -t c down `nmcli -t -c no c show --active|grep ':vpn:' | cut -d':' -f2`
+fi

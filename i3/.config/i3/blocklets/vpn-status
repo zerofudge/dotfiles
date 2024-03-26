@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+for c in `nmcli -t c show --active |cut -d':' -f1,3| sed 's/\s/_/g'`; do
+    if [[ `echo "$c" | cut -d':' -f2` = 'vpn' ]]; then
+        echo $c|cut -d':' -f1
+        exit 0
+    fi
+done
+
+echo "<span foreground=\"#FF0000\">down</span>"
+
+case $BLOCK_BUTTON in
+  1) exec ~/.config/i3/bin/openvpn down
+esac

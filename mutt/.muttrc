@@ -1,0 +1,270 @@
+#      ££     file : muttrc
+#   __,ττ       by : MuttrcBuilder <http://mutt.netliberte.org>
+#    \\,_O    date : Thu Aug 14, 2003 19:11:57
+#    /~        for : gate1-i.neofonie.de [212.20.147.34]
+
+#reset all
+
+#source "~/.muttrc.colors"
+
+# Macros ##################################################################
+
+macro index "S" "DSPAM|QUAR\n$\n" "delete spam"
+
+# User description ########################################################
+set realname = "Frank Geusch"
+set reply_to = yes
+set reverse_name = no
+set reverse_realname = no
+set from = "f.geusch@syseleven.de"
+set gecos_mask = "^[^,]*"
+set hidden_host = yes
+set hostname = cheesecake
+#set alternates = ""
+
+# General mutt options ####################################################
+set wait_key = yes
+set weed = yes
+set status_on_top = no
+set suspend = no
+set timeout = 600
+set beep = no
+set user_agent = yes
+set delete_untag = yes
+set prompt_after = yes
+set quit = ask-yes
+set read_inc = 10
+set mail_check = 60
+set menu_scroll = yes
+set meta_key = no
+set help = yes
+set history = 10
+set read_only = no
+set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
+set delete = ask-yes
+set beep_new = no
+set charset = "iso-8859-1"
+set check_new = yes
+# html view on 
+set implicit_autoview = yes
+auto_view text/html  application/x-pgp-message
+set mailcap_path="/Users/fudge/.mailcap"
+set mailcap_sanitize=yes
+
+# OS Specifiques options ##################################################
+set tmpdir = /tmp
+set print = ask-no
+set print_command = "lpr"
+set print_decode = yes
+set ispell = "ispell"
+#set locale = "C"
+set locale = "de_DE.utf8"
+set shell = ""
+set spoolfile = "imap://imap.syseleven.net/INBOX"
+
+# Menu index ##############################################################
+set wrap_search = yes
+set sort_re = yes
+set status_chars = "-*%A"
+set status_format = "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+set strict_threads = no
+set thorough_search = no
+set to_chars = " +TCF"
+set simple_search = "~f %s | ~s %s"
+set sort = threads
+set sort_aux = date-sent
+set resolve = yes
+set index_format = "%4C %Z %{%b %d} %-15.15L (%4l) %s"
+set mark_old = yes
+set allow_8bit = yes
+set arrow_cursor = no
+set ascii_chars = no
+set auto_tag = no
+set collapse_unread = yes
+set uncollapse_jump = no
+
+# Internal Pager ##########################################################
+set visual = gvim
+set sig_dashes = yes
+set smart_wrap = yes
+set smileys = "(>From )|(:[-^]?[][)(><}{|/DP])"
+set quote_regexp = "^([ \t]*[|>:}#])+"
+set pager = "builtin"
+set pager_context = 0
+set pager_format = "-%Z- %C/%m: %-20.20n   %s"
+set pager_index_lines = 0
+set pager_stop = no
+set markers = yes
+set escape = "~"
+set tilde = no
+
+# Composing ###############################################################
+set use_domain = no
+set signature = "~/.signature"
+set postpone = ask-yes
+set postponed = "~/postponed"
+#set query_command = "~/bin/ldap-mutt-query.sh '%s'"
+set recall = ask-yes
+set editor = vim
+set fast_reply = no
+set abort_nosubject = ask-yes
+set abort_unmodified = yes
+set askbcc = no
+set askcc = yes
+
+# Replying ################################################################
+set post_indent_string = ""
+set reply_regexp = "^(re([\\[0-9\\]+])*|aw):[ \t]*"
+set reply_self = no
+set indent_string = "> "
+#set in_reply_to = "%i; from %a on %{!%a, %b %d, %Y at %I:%M:%S%p %Z}"
+set honor_followup_to = yes
+set ignore_list_reply_to = no
+set include = ask-yes
+set attribution = "On %d, %n wrote:"
+set bounce_delivered = yes
+
+# Forwarding ##############################################################
+set forward_decrypt = yes
+set forward_decode = yes
+set forward_format = "[%a: %s]"
+set forward_quote = no
+
+# Folder and Mailbox ######################################################
+set write_inc = 10
+set sort_browser = alpha
+set pipe_split = no
+set pipe_decode = no
+set pipe_sep = "\n"
+set move = ask-no
+set mask = "."
+#set mask = "!^\\.[^.]"
+set mbox = "~/mbox"
+#set mbox_type = mbox
+set mbox_type = Maildir
+set mh_purge = no
+set confirmappend = yes
+set confirmcreate = yes
+set copy = yes
+set default_hook = "~f %s !~P | (~P ~C %s)"
+set fcc_attach = no
+set fcc_clear = yes
+set folder_format = "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
+set force_name = no
+
+# Headers #################################################################
+set hdrs = yes
+set header = no
+set edit_headers = no
+set autoedit = no
+
+# Sending #################################################################
+set write_bcc = yes
+set use_from = yes
+set save_address = no
+set save_empty = yes
+set save_name = no
+set send_charset = ""
+#set mix_entry_format = "%4n %c %-16s %a"
+#set mixmaster = "mixmaster"
+set metoo = no
+set encode_from = no
+set envelope_from = no
+set followup_to = yes
+
+# Alias ###################################################################
+set sort_alias = alias
+set reverse_alias = no
+set alias_file = "~/.muttrc"
+set alias_format = "%4n %t %-10a   %r"
+
+# Attached documents ######################################################
+set attach_format = "%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
+set attach_sep = "\n"
+set attach_split = yes
+
+# MIME ####################################################################
+set rfc2047_parameters = no
+set mime_forward_rest = yes
+set message_format = "%s"
+set mime_forward = no
+set mime_forward_decode = no
+
+# POP #####################################################################
+set pop_user = ""
+set pop_pass = ""
+set pop_delete = no
+set pop_host = ""
+#set pop_port = 110
+set pop_last = no
+
+# IMAP ####################################################################
+#set imap_checkinterval = 60
+set imap_list_subscribed = no
+#set imap_cramkey = ""
+set imap_passive = yes
+set imap_servernoise = yes
+#set imap_preconnect = ""
+set imap_authenticators="login"
+
+# SSL #####################################################################
+#set entropy_file = ""
+#set ssl_usesystemcerts = yes
+set ssl_use_sslv3 = yes
+set ssl_use_tlsv1 = yes
+#set imap_force_ssl = yes
+
+# PGP #####################################################################
+set pgp_timeout = 300
+set pgp_verify_sig = yes
+set pgp_sort_keys = address
+set pgp_create_traditional = no
+set pgp_decode_command = "/usr/bin/gpg   %?p?--passphrase-fd 0? --no-verbose --quiet  --batch  --output - %f"
+set pgp_getkeys_command = ""
+set pgp_decrypt_command = "/usr/bin/gpg   --passphrase-fd 0 --no-verbose --quiet  --batch  --output - %f"
+set pgp_clearsign_command = "/usr/bin/gpg   --no-verbose --batch --quiet   --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_sign_command = "/usr/bin/gpg    --no-verbose --batch --quiet   --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_encrypt_sign_command = "pgpewrap /usr/bin/gpg  --passphrase-fd 0  --batch --quiet  --no-verbose  --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_only_command = "pgpewrap /usr/bin/gpg    --batch  --quiet  --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_import_command = "/usr/bin/gpg  --no-verbose --import -v %f"
+set pgp_export_command = "/usr/bin/gpg   --no-verbose --export --armor %r"
+set pgp_verify_key_command = "/usr/bin/gpg   --verbose --batch  --fingerprint --check-sigs %r"
+set pgp_list_secring_command = "/usr/bin/gpg   --no-verbose --batch --quiet   --with-colons --list-secret-keys %r"
+set pgp_list_pubring_command = "/usr/bin/gpg   --no-verbose --batch --quiet   --with-colons --list-keys %r"
+set certificate_file = ""
+set pgp_autosign = yes
+set pgp_autoencrypt = no
+set pgp_entry_format = "%4n %t%f %4l/0x%k %-4a %2c %u"
+set pgp_long_ids = no
+set pgp_replyencrypt = no
+set pgp_replysign = no
+set pgp_replysignencrypted = no
+set pgp_retainable_sigs = no
+set pgp_show_unusable = yes
+set pgp_sign_as = ""
+#set pgp_sign_micalg = "pgp-md5"
+set pgp_strict_enc = yes
+set pgp_verify_command = "/usr/bin/gpg   --no-verbose --quiet  --batch  --output - --verify %s %f"
+set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
+
+# Scoring #################################################################
+set score = yes
+set score_threshold_delete = -1
+set score_threshold_flag = 9999
+set score_threshold_read = -1
+
+# Sendmail ################################################################
+set use_8bitmime = no
+set sendmail = "/usr/sbin/sendmail -oem -oi"
+set sendmail_wait = 0
+set dsn_notify = ""
+set dsn_return = ""
+
+bind index F imap-fetch-mail
+
+# EOF
+alias frank Frank Geusch <frank@zerofudge.de>
+alias kenny Kevin Niehage <kenny@syseleven.de>
+alias b.schulze Belinda Schulze <b.schulze@syseleven.de>
+alias tine Tine SysEleven <tine@syseleven.de>
+alias p.clermont Pascal Clermont <p.clermont@syseleven.de>

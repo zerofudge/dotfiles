@@ -1,0 +1,63 @@
+[pack] 
+  deltaCacheSize = 8096
+  windowMemory = 8096
+[user]
+	name = Frank Geusch
+	email = f.geusch@syseleven.de
+	signingkey = 459D819CD85D50EC13D6DAEB741523669D239A52
+[color]
+  ui = always
+[core]
+	excludesfile = /home/fgeusch/.gitignore_global
+	quotepath = false
+	compression = 0
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	stat = status
+        f = flow
+	stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0 ] && git stash pop stash@{1}; }; _"
+	logs = log --show-signature
+[push]
+	default = current
+	followTags = false
+[log]
+      date = relative
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+[commit]
+	template = /home/fgeusch/.stCommitMsg
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[protocol]
+	version = 2
+[pull]
+	rebase = true
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[url "git@code.syseleven.de:"]
+	insteadOf = https://code.syseleven.de/
+[init]
+    defaultBranch = main
+[fetch]
+    pruneTags = true
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
+	credentialStore = gpg
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://gitlab.com"]
+	provider = generic
+[credential "https://gitlab.syseleven.de"]
+	provider = generic
+[url "git@mka.git.syseleven.de:"]
+	insteadOf = https://mka.git.syseleven.de/
+[credential "https://mka.git.syseleven.de"]
+	provider = generic

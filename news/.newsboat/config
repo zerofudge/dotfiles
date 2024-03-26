@@ -1,0 +1,15 @@
+browser         xdg-open
+
+color listfocus yellow black
+color listfocus_unread yellow black bold
+color info      yellow black bold
+
+always-display-description true 
+
+articlelist-format "%4i %f %D %?T?|%-17T| ?%t"
+
+mark-as-read-on-hover yes
+auto-reload yes
+refresh-on-startup yes
+reload-time 15
+max-items 2500

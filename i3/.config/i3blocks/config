@@ -1,0 +1,124 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=~/.config/i3/blocklets/$BLOCK_NAME
+separator=true
+separator_block_width=15
+markup=pango
+align=center
+
+# uptime
+[uptime]
+command=uptime -p
+color=#9fe0bc
+interval=120
+
+# song
+#[currentsong]
+#interval=10
+#color=#e0b067
+#label=𝄞
+
+# load
+[load]
+interval=10
+label=🖵
+color=#91dbce
+
+# VPN status
+[vpn-status]
+interval=30
+label=🔒
+color=#a252f2
+
+# RAM usage
+[memory]
+interval=30
+markup=pango
+label= 
+color=#7d9df0
+
+# CPU Usage
+[cpu_usage]
+label=💻
+interval=-2
+markup=pango
+
+# disk io
+[disk-io]
+interval=persist
+markup=pango
+label=
+instance=/^nvme/
+color=#f5ca0c
+
+# Network Interface IP
+[iface]
+color=#B4B7B4
+interval=1
+label=🖧
+
+# Wi-Fi SSID
+[ssid]
+label=📶
+color=#66ff62
+interval=2
+separator=false
+
+# signal
+[wifi]
+instance=wlp0s20f3
+interval=60
+
+#Network Bandwidth
+[bandwidth]
+interval=persist
+markup=pango
+label=
+min_width=150
+align=center
+color=#98fc26
+
+# Battery level
+[battery]
+interval=60
+label=🔋
+
+# Date and Time Calendar
+[time]
+label=
+interval=1
+color=#50C878
+
+# volume control
+[volume-pulseaudio]
+interval=once
+signal=1
+
+# Battery level notification
+[batnotify]
+interval=10
+separator_block_width=4

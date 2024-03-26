@@ -1,0 +1,38 @@
+# transparent_background_colors = true
+
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[colors.normal]
+black = "#05070A"
+
+[colors.cursor]
+cursor = "#ff1234"
+text = "CellForeground"
+
+[colors.primary]
+background = "#0C0C1C"
+# background = "#000000"
+# foreground = "#12ef12"
+
+[cursor]
+thickness = 0.05
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[font]
+size = 8.0
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Medium"
+
+[scrolling]
+history = 0
+
+[window]
+decorations = "none"
+startup_mode = "Fullscreen"

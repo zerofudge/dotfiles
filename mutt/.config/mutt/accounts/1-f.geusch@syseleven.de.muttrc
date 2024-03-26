@@ -1,0 +1,62 @@
+# vim: filetype=neomuttrc
+
+set realname = "Frank Geusch"
+set from = "f.geusch@syseleven.de"
+set sendmail = "msmtp -a f.geusch@syseleven.de"
+alias me Frank Geusch <f.geusch@syseleven.de>
+set folder = "/home/fgeusch/.local/share/mail/f.geusch@syseleven.de"
+set header_cache = /home/fgeusch/.cache/mutt-wizard/f.geusch@syseleven.de/headers
+set message_cachedir = /home/fgeusch/.cache/mutt-wizard/f.geusch@syseleven.de/bodies
+set mbox_type = Maildir
+
+### custom
+set sort_re = yes
+set sort = threads
+set sort_aux = date-sent
+bind pager \CI sidebar-prev
+bind pager \CP sidebar-next
+bind pager \CO sidebar-open
+
+
+bind index,pager gg noop
+bind index,pager g noop
+bind index,pager M noop
+bind index,pager C noop
+bind index gg first-entry
+bind index d delete-message
+bind index D delete-pattern
+
+unmailboxes *
+unalternates *
+unset signature
+macro index o "<shell-escape>mbsync f.geusch@syseleven.de<enter>" "run mbsync to sync f.geusch@syseleven.de"
+my_hdr bcc: f.geusch@syseleven.de
+my_hdr X-Mailer: NeoMutt/20191207
+
+mailboxes "=Notes" "=Archive" "=Sent" "=Drafts" "=Trash" "=Junk" "=INBOX"
+macro index,pager ga "<change-folder>=Archive<enter>" "go to archive"
+macro index,pager Ma ";<save-message>=Archive<enter>" "move mail to archive"
+macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
+set record = "+Sent"
+macro index,pager gs "<change-folder>=Sent<enter>" "go to sent"
+macro index,pager Ms ";<save-message>=Sent<enter>" "move mail to sent"
+macro index,pager Cs ";<copy-message>=Sent<enter>" "copy mail to sent"
+set postponed = "+Drafts"
+macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts"
+macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts"
+macro index,pager Cd ";<copy-message>=Drafts<enter>" "copy mail to drafts"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=Trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=Trash<enter>" "copy mail to trash"
+set trash = "+Trash"
+macro index,pager gj "<change-folder>=Junk<enter>" "go to junk"
+macro index,pager Mj ";<save-message>=Junk<enter>" "move mail to junk"
+macro index,pager Cj ";<copy-message>=Junk<enter>" "copy mail to junk"
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
+macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
+macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
+set spoolfile = "+INBOX"
+
+set crypt_autosign = yes
+
+macro index X "<delete-pattern>~f '(noreply@code|gitlab@mka\.git)\.syseleven\.de|notifications@leapsome.net|updates.miro.com'<enter><sync-mailbox><enter>" "delete bot spam + BS"
