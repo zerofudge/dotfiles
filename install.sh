@@ -6,4 +6,6 @@ set -e
 
 PWD=$(cd "$(dirname "$0")"; pwd)
 
-find "${PWD}" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | grep -vw .git | xargs -n 1 stow --target ${HOME}
+cd "${PWD}" && \
+find "${PWD}" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | grep -vw .git | xargs -n 1 stow --target "${HOME}" && \
+cd - >/dev/null

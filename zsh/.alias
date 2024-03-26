@@ -6,6 +6,7 @@ alias unlock='bw unlock `pass syseleven/bitwarden.syseleven.net/f.geusch@syselev
 alias ag='ag --hidden'
 #alias vi='vim'
 alias vi='nvim'
+alias v='vi'
 #alias cd='z'
 alias less='less -rNF'
 alias gdcx='git -c color.ui=always diff | less'
