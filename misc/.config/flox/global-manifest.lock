@@ -1,0 +1,52 @@
+{
+  "lockfile-version": 0,
+  "manifest": {
+    "registry": {
+      "defaults": {
+        "subtrees": null
+      },
+      "inputs": {
+        "nixpkgs": {
+          "from": {
+            "owner": "NixOS",
+            "ref": "release-23.11",
+            "repo": "nixpkgs",
+            "type": "github"
+          },
+          "subtrees": [
+            "legacyPackages"
+          ]
+        }
+      },
+      "priority": [
+        "nixpkgs"
+      ]
+    }
+  },
+  "packages": {
+    "x86_64-linux": {}
+  },
+  "registry": {
+    "defaults": {
+      "subtrees": null
+    },
+    "inputs": {
+      "nixpkgs": {
+        "from": {
+          "lastModified": 1710943585,
+          "narHash": "sha256-+lPjLfMb+S8pth+d/g3El5P6MQD32VUJ1XVXc2hwfMk=",
+          "owner": "NixOS",
+          "repo": "nixpkgs",
+          "rev": "5d66fda7082c260bcebe94ae3a0df839c8df3d4a",
+          "type": "github"
+        },
+        "subtrees": [
+          "legacyPackages"
+        ]
+      }
+    },
+    "priority": [
+      "nixpkgs"
+    ]
+  }
+}

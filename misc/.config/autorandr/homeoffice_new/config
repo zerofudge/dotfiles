@@ -1,0 +1,18 @@
+output HDMI-1
+off
+output HDMI-2
+off
+output eDP-1
+mode 1920x1080
+pos 0x0
+primary
+rate 60.01
+output DP-2
+mode 3440x1440
+pos 3840x0
+rate 59.97
+output DP-1
+mode 1920x1080
+pos 7280x0
+rate 60.00
+rotate left
