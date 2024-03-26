@@ -24,7 +24,6 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-[ -s "${HOME}/.powerline" ] && source "${HOME}/.powerline"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -125,7 +124,7 @@ source ${HOME}/.kube/load-configs.sh
 xmodmap ${HOME}/.Xmodmap
 
 # rust
-source "${HOME}/.asdf/installs/rust/1.74.1/env"
+source "${HOME}/.asdf/installs/rust/1.76.0/env"
 export PATH=${HOME}/.cargo/bin:${PATH}
 
 # node

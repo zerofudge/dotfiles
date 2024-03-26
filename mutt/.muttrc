@@ -263,8 +263,3 @@ set dsn_return = ""
 bind index F imap-fetch-mail
 
 # EOF
-alias frank Frank Geusch <frank@zerofudge.de>
-alias kenny Kevin Niehage <kenny@syseleven.de>
-alias b.schulze Belinda Schulze <b.schulze@syseleven.de>
-alias tine Tine SysEleven <tine@syseleven.de>
-alias p.clermont Pascal Clermont <p.clermont@syseleven.de>
