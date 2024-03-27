@@ -1,4 +1,3 @@
-fpath+=~/.zfunc
 fpath+=~/.config/completions
 fpath+=~/.asdf/completions
 
@@ -72,18 +71,7 @@ bindkey '^R' history-incremental-search-backward
 
 # aliases
 [[ -s "$HOME/.alias" ]] && source "$HOME/.alias"
-alias ..='cd ..'
-alias ...='..;..'
-alias ....='...;..'
-alias .....='....;..'
-alias l='ls -la'
-alias ll='ls -lisa'
-alias psa='ps auxwwww'
-alias cdc='cd ~/current'
-alias open='xdg-open'
-alias backup_open="sudo cryptsetup luksOpen /dev/sda1 backup"
-alias backup_lock="sudo cryptsetup luksClose backup"
-
+#
 #prompt
 precmd() { print "" }
 
@@ -117,8 +105,10 @@ PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
 # more kube stuff
-alias kctx='kubectx'
-alias kcd='kubens'
+
+alias kubectl=kubecolor
+compdef kubecolor=kubectl
+
 source ${HOME}/.kube/load-configs.sh
 
 xmodmap ${HOME}/.Xmodmap
