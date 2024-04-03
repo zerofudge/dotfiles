@@ -9,3 +9,8 @@ PWD=$(cd "$(dirname "$0")"; pwd)
 cd "${PWD}" && \
 find "${PWD}" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | grep -vw .git | xargs -n 1 stow --target "${HOME}" && \
 cd - >/dev/null
+
+
+# post install
+
+[ -f "${HOME}/.crontab" ] && crontab "${HOME}/.crontab"

@@ -1,0 +1,15 @@
+MAILTO=""
+
+* * * * * nc -zb -w1 imap.syseleven.net 993 || ~/bin/vpn down
+* * * * * sleep 15; nc -zb -w1 imap.syseleven.net 993 || ~/bin/vpn down
+* * * * * sleep 30; nc -zb -w1 imap.syseleven.net 993 || ~/bin/vpn down
+* * * * * sleep 45; nc -zb -w1 imap.syseleven.net 993 || ~/bin/vpn down
+* * * * * nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
+* * * * * sleep 15; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
+* * * * * sleep 30; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
+* * * * * sleep 45; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
+0 */6 * * * cd ~/shared-passwords; git fetch --all --prune --prune-tags; git pull --prune --all; ./get-keys.sh
+*/10 * * * * /usr/local/bin/mailsync >/dev/null 2>&1
+0 */2 * * * notmuch new
+*/30 * * * * /snap/bin/joplin sync
+* * * * * docker run --rm --privileged --net=host bluetooth_battery_level 'AC:12:2F:AC:AA:08' | awk '{print $NF}' | sed 's/\.//g' > /tmp/headset-lvl
