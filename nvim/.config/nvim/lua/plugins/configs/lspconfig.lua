@@ -20,6 +20,8 @@ M.on_attach = function(client, bufnr)
   -- refresh codelens on TextChanged and InsertLeave as well
   vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertLeave', 'CursorHold', 'LspAttach' }, {
     buffer = bufnr,
+    capabilities = M.capabilities,
+    -- FIXME check capabilities
     callback = vim.lsp.codelens.refresh,
   })
 
