@@ -1,0 +1,45 @@
+RCversion: 1.1
+map: Text,builtin,lpr %s
+map: text/plain,builtin,lpr %s
+map: audio/basic,|play -v 40 -&,
+map: Image,xv %s,lpr %s
+map: Terminal/telnet,telnet %s,
+map: Terminal/tn3270,tn3270 %s,
+map: text/html,lynx -force_html %s,lynx -force_html -dump %s | lpr
+map: text/richtext,richtext %s|Less -f -r,lpr %s
+map: text/rip,showrip %s,lpr %s
+map: text/tab-separated-values,builtin,lpr %s
+map: text/x-dvi,xdvi %s,lpr %s
+map: text/x-tex,,
+map: text/x-troff,nroff %s|more -d,ptroff %s
+map: message/rfc822,builtin,lpr %s
+map: image/gif,|xv -,|giftoppm |pnmtops | lpr
+map: image/ief,,
+map: image/jpeg,,
+map: image/ppm,|xv -,|pnmtops | lpr
+map: image/tiff,tifftopnm|xv -,tifftopnm|pnmtops|lpr
+map: video/mpeg,,
+map: video/quicktime,,
+map: application/applefile,,
+map: application/dca-rft,,
+map: application/mac-binhex40,,
+map: application/macwriteii,,
+map: application/msword,,
+map: application/octet-stream,,
+map: application/oda,,
+map: application/pdf,,
+map: application/postscript,gspreview %s,lpr %s
+map: application/rtf,,
+map: application/wordperfect5.1,,
+map: application/zip,,
+SearchBolding: yes
+UseANSIprinter: no
+
+bookmarks:
+#
+Type=1+
+Name=Home Gopher server: gopherproject.org
+Path=/Software/Gopher
+Host=gopherproject.org
+Port=70
+
