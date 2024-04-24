@@ -87,9 +87,9 @@ lspconfig.gopls.setup {
         staticcheck = true,
         usePlaceholders = true,
         codelenses = {
-          generate = false,
+          generate = true,
           gc_details = true,
-        }
+        },
       },
   },
 }

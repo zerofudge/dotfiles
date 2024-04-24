@@ -7,7 +7,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load.
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context os_icon kubecontext custom_goversion vcs dir)
-POWERLEVEL9K_CUSTOM_GOVERSION="go version | awk '{print \$3}'"
+POWERLEVEL9K_CUSTOM_GOVERSION="echo -n '🐹 '; go version | awk '{print \$3}'| sed 's/go//'"
 POWERLEVEL9K_CUSTOM_GOVERSION_BACKGROUND="237"
 POWERLEVEL9K_CUSTOM_GOVERSION_FOREGROUND="227"
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator vi_mode history )

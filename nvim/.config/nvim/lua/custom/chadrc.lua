@@ -12,6 +12,9 @@ M.ui = {
   hl_add = highlights.add,
 }
 
+vim.api.nvim_set_hl(0, "Comment", { fg = "#777777", italic = true})
+vim.api.nvim_set_hl(0, "@comment", { link = "Comment"})
+
 M.plugins = "custom.plugins"
 
 -- check core.mappings for table structure

@@ -9,7 +9,7 @@ M.override = {
   Comment = {
     italic = true,
   },
-  NonText = { fg = "darker_black" }
+  NonText = { fg = "#334455" },
 }
 
 ---@type HLTable
