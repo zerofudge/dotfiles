@@ -27,3 +27,6 @@ alias backup_lock="sudo cryptsetup luksClose backup"
 alias kctx='kubectx'
 alias kcd='kubens'
 # alias kubectl='kubecolor'
+
+alias glab='python-gitlab'
+alias bw_all="bw list items --collectionid 044e6c6d-193b-49da-8381-aeb500b3ff43|jq -r '.[]|[.name,.id]'"
