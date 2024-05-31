@@ -8,7 +8,6 @@ MAILTO=""
 * * * * * sleep 15; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
 * * * * * sleep 30; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
 * * * * * sleep 45; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
-0 */6 * * * cd ~/shared-passwords; git fetch --all --prune --prune-tags; git pull --prune --all; ./get-keys.sh
 */10 * * * * /usr/local/bin/mailsync >/dev/null 2>&1
 0 */2 * * * notmuch new
 */30 * * * * joplin sync

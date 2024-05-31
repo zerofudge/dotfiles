@@ -59,4 +59,4 @@ set spoolfile = "+INBOX"
 
 set crypt_autosign = yes
 
-macro index X "<delete-pattern>~f '(noreply@code|gitlab@mka\.git)\.syseleven\.de|notifications@leapsome.net|updates.miro.com'<enter><sync-mailbox><enter>" "delete bot spam + BS"
+macro index X "<delete-pattern>~f '(noreply@code|gitlab@mka.git).syseleven.de|notifications@leapsome.net|updates.miro.com'<enter><sync-mailbox><enter>" "delete bot spam + BS"
