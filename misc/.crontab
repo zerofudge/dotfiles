@@ -9,6 +9,7 @@ MAILTO=""
 * * * * * sleep 30; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
 * * * * * sleep 45; nmcli -t c show --active|grep ':vpn:' || ~/bin/vpn up
 */10 * * * * /usr/local/bin/mailsync >/dev/null 2>&1
+*/25 * * * * BASH_ENV=/etc/profile /home/fgeusch/bin/shuffle-bg
 0 */2 * * * notmuch new
 */30 * * * * joplin sync
 * * * * * docker run --rm --privileged --net=host bluetooth_battery_level 'AC:12:2F:AC:AA:08' | awk '{print $NF}' | sed 's/\.//g' > /tmp/headset-lvl

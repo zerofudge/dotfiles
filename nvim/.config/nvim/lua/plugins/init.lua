@@ -275,6 +275,18 @@ local default_plugins = {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+
+  -- codeium
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter',
+    config = function()
+      vim.api.nvim_call_function("codeium#GetStatusString", {})
+      -- XXX beeds teams plan
+      -- vim.keymap.set('n', '<c-x>', function() return vim.fn['codeium#Chat']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    end
+  },
 }
 
 local config = require("core.utils").load_config()
