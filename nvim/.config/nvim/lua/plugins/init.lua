@@ -281,9 +281,7 @@ local default_plugins = {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
     config = function()
-      vim.api.nvim_call_function("codeium#GetStatusString", {})
-      -- XXX beeds teams plan
-      -- vim.keymap.set('n', '<c-x>', function() return vim.fn['codeium#Chat']() end, { expr = true, silent = true })
+      vim.keymap.set('n', '<c-x>', function() return vim.fn['codeium#Chat']() end, { expr = true, silent = true })
       vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
     end
   },
