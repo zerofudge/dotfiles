@@ -1,5 +1,6 @@
 local options = {
   ensure_installed = {
+        "comment",
         "lua",
         "go",
         "gomod",

@@ -1,5 +1,7 @@
 setopt histignorealldups sharehistory
 
+ZSH_DISABLE_COMPFIX=true
+
 fpath+=~/.config/completions
 fpath+=~/.asdf/completions
 
@@ -9,7 +11,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load.
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context os_icon kubecontext custom_goversion vcs dir)
-POWERLEVEL9K_CUSTOM_GOVERSION="echo -n '🐹 '; go version | awk '{print \$3}'| sed 's/go//'"
+POWERLEVEL9K_CUSTOM_GOVERSION="echo -n ' '; go version | awk '{print \$3}'| sed 's/go//'"
 POWERLEVEL9K_CUSTOM_GOVERSION_BACKGROUND="237"
 POWERLEVEL9K_CUSTOM_GOVERSION_FOREGROUND="227"
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator vi_mode history )
@@ -50,7 +52,7 @@ plugins=(colored-man-pages colorize cp docker docker-compose git-prompt gitignor
 # zsh syntax highlightinh
 # source ${HOME}/.config/zsh/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-export PATH="${PATH}:${HOME}/bin:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${PATH}:.:${HOME}/bin:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # nix fubar
@@ -132,7 +134,6 @@ export PATH=${PATH}:${HOME}/.local/bin
 # garden
 export PATH=${PATH}:${HOME}/.garden/bin
 
-
 # nmon
 export NMON=cdklmMMMnouUVv.
 
@@ -155,7 +156,7 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-#
+
 # umlautse
 setxkbmap -option compose:caps
 
@@ -164,3 +165,5 @@ eval "$(direnv hook zsh)"
 
 # prune path
 typeset -U path
+
+export OPENAI_KEY="$(pass openai.com/fgeusch@syseleven.de/apikey)"
