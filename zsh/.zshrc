@@ -5,7 +5,7 @@ ZSH_DISABLE_COMPFIX=true
 fpath+=~/.config/completions
 fpath+=~/.asdf/completions
 
-export TERM="tmux-256color"
+# export TERM="tmux-256color"
 export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load.
@@ -45,7 +45,7 @@ HIST_STAMPS="dd.mm.yyyy"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZ=20
 
-plugins=(colored-man-pages colorize cp docker docker-compose git-prompt gitignore golang kubectl ssh-agent sudo tmux vi-mode z ubuntu systemd fzf man zsh-autosuggestions debian vscode git-extras kubectx asdf)
+plugins=(colored-man-pages colorize cp docker git-prompt gitignore golang kubectl ssh-agent sudo tmux vi-mode z fzf man zsh-autosuggestions git-extras kubectx asdf)
 
 # User configuration
 
@@ -67,7 +67,7 @@ export PAGER=
 
 # terminal fix for disappearing cursor w/ tmux
 set -g default-terminal "xterm-256color"
-tput cnorm
+# tput cnorm
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -88,14 +88,13 @@ autoload -U colors && colors
 export EDITOR=nvim
 
 export DOCKER_GITHUB_TOKEN=8d24031296185e31b292ca69789186c7488a4b27
-export JIRA_NAME=$USER
 
 # scmbreeze
 [ -s "${HOME}/.scm_breeze/scm_breeze.sh" ] && source "${HOME}/.scm_breeze/scm_breeze.sh"
 
 # fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
 
 # go
 export GOPATH=${HOME}/work/src/other/gopath
@@ -105,24 +104,15 @@ export PATH="${GOBIN}:${PATH}"
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-# perl
-export PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"
-PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
-
 # more kube stuff
 
 alias kubectl=kubecolor
 compdef kubecolor=kubectl
 
-source ${HOME}/.kube/load-configs.sh
-
-xmodmap ${HOME}/.Xmodmap
+[[ -f ${HOME}/.kube/load-configs.sh ]] && source ${HOME}/.kube/load-configs.sh
 
 # rust
-source "${HOME}/.asdf/installs/rust/1.76.0/env"
+source "${HOME}/.asdf/installs/rust/1.79.0/env"
 export PATH=${HOME}/.cargo/bin:${PATH}
 
 # node
@@ -130,9 +120,6 @@ export PATH=${PATH}:~/.npm-global/bin
 
 # python
 export PATH=${PATH}:${HOME}/.local/bin
-
-# garden
-export PATH=${PATH}:${HOME}/.garden/bin
 
 # nmon
 export NMON=cdklmMMMnouUVv.
@@ -144,7 +131,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+eval "$(gdircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -157,13 +144,15 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# umlautse
-setxkbmap -option compose:caps
-
 # direnv hook
 eval "$(direnv hook zsh)"
 
 # prune path
 typeset -U path
 
-export OPENAI_KEY="$(pass openai.com/fgeusch@syseleven.de/apikey)"
+export OPENAI_KEY="$(pass openai.com/frank@zerofudge.de/apikey)"
+
+# powerline
+# powerline-daemon -q
+# source ${HOME}/.powerline.sh
+

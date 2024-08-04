@@ -23,9 +23,13 @@ local servers = {
   "html",
   "jqls",
   "jsonls",
-  -- "markdown_oxide",
   "nil_ls",
   "yamlls",
+}
+
+lspconfig.zls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 for _, lsp in ipairs(servers) do

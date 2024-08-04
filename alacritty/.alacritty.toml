@@ -22,11 +22,11 @@ blinking = "Always"
 shape = "Block"
 
 [font]
-size = 8.0
+size = 12.0
 
 [font.normal]
 family = "Hack Nerd Font"
-style = "Medium"
+style = "Regular"
 
 [scrolling]
 history = 0
@@ -35,3 +35,4 @@ history = 0
 decorations = "none"
 startup_mode = "Fullscreen"
 opacity = 0.97
+# OptionAsAlt = "OnlyLeft"

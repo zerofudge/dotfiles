@@ -3,12 +3,12 @@
   windowMemory = 8096
 [user]
 	name = Frank Geusch
-	email = f.geusch@syseleven.de
-	signingkey = 459D819CD85D50EC13D6DAEB741523669D239A52
+	email = frank@zerofudge.de
+	signingkey = 2D3667304A44400055B51145A912086A6A554978
 ; [color]
   ; ui = always
 [core]
-	excludesfile = /home/fgeusch/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	quotepath = false
 	compression = 0
 [difftool "sourcetree"]
@@ -30,7 +30,7 @@
 [format]
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 [commit]
-	template = /home/fgeusch/.stCommitMsg
+	template = ~/.stCommitMsg
 	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean %f
@@ -42,8 +42,6 @@
 	rebase = true
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
-[url "git@code.syseleven.de:"]
-	insteadOf = https://code.syseleven.de/
 [init]
     defaultBranch = main
 [fetch]
@@ -54,10 +52,4 @@
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [credential "https://gitlab.com"]
-	provider = generic
-[credential "https://gitlab.syseleven.de"]
-	provider = generic
-[url "git@mka.git.syseleven.de:"]
-	insteadOf = https://mka.git.syseleven.de/
-[credential "https://mka.git.syseleven.de"]
 	provider = generic

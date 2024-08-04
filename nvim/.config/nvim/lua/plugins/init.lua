@@ -285,6 +285,11 @@ local default_plugins = {
       vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
     end
   },
+
+  -- zig
+  {
+    "ziglang/zig.vim"
+  }
 }
 
 local config = require("core.utils").load_config()
